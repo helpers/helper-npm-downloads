@@ -10,7 +10,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "utils.js"
   ],
   "main": "index.js",
   "engines": {
@@ -19,10 +20,29 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+  "dependencies": {
+    "is-number": "^2.1.0",
+    "lazy-cache": "^1.0.3",
+    "npm-info": "^0.1.1"
   },
-  "keywords": []
+  "devDependencies": {
+    "engine-base": "^0.1.2",
+    "mocha": "*",
+    "templates": "^0.11.0"
+  },
+  "keywords": [],
+  "verb": {
+    "related": {
+      "list": [
+        "assemble",
+        "download-stats",
+        "engine",
+        "engine-base",
+        "generate",
+        "npm-info",
+        "templates",
+        "verb"
+      ]
+    }
+  }
 }

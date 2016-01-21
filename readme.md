@@ -1,4 +1,4 @@
-# helper-downloads [![NPM version](https://img.shields.io/npm/v/helper-downloads.svg)](https://www.npmjs.com/package/helper-downloads)
+# helper-downloads [![NPM version](https://img.shields.io/npm/v/helper-downloads.svg)](https://www.npmjs.com/package/helper-downloads) [![Build Status](https://img.shields.io/travis/helpers/helper-downloads.svg)](https://travis-ci.org/helpers/helper-downloads)
 
 > Get the npm download counts for the specified repository.
 

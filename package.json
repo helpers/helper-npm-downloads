@@ -1,0 +1,28 @@
+{
+  "name": "helper-downloads",
+  "description": "Get a count of a project's downloads.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/helpers/helper-downloads",
+  "author": "Brian Woodward (https://github.com/doowb)",
+  "repository": "helpers/helper-downloads",
+  "bugs": {
+    "url": "https://github.com/helpers/helper-downloads/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": []
+}

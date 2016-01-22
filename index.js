@@ -1,5 +1,5 @@
 /*!
- * helper-downloads <https://github.com/helpers/helper-downloads>
+ * helper-npm-downloads <https://github.com/helpers/helper-npm-downloads>
  *
  * Copyright (c) 2016, Brian Woodward.
  * Licensed under the MIT License.

@@ -1,5 +1,5 @@
 /*!
- * helper-downloads <https://github.com/helpers/helper-downloads>
+ * helper-npm-downloads <https://github.com/helpers/helper-npm-downloads>
  *
  * Copyright (c) 2016 .
  * Licensed under the MIT license.
@@ -14,7 +14,7 @@ var engine = require('engine-base');
 var helper = require('./');
 var app;
 
-describe('helper-downloads', function() {
+describe('helper-npm-downloads', function() {
   it('should throw an error when nothing is specified', function(cb) {
     try {
       helper();

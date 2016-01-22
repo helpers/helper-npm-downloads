@@ -30,7 +30,18 @@
     "mocha": "*",
     "templates": "^0.11.0"
   },
-  "keywords": [],
+  "keywords": [
+    "counts",
+    "download",
+    "download-counts",
+    "download-stats",
+    "downloads",
+    "helper",
+    "helpers",
+    "npm",
+    "npm-downloads",
+    "stats"
+  ],
   "verb": {
     "related": {
       "list": [

@@ -9,12 +9,28 @@
 
 require('mocha');
 var assert = require('assert');
+var npm = require('npm-info')();
 var templates = require('templates');
 var engine = require('engine-base');
 var helper = require('./');
-var app;
+var app, expectedTotal, expectedLast30;
 
 describe('helper-npm-downloads', function() {
+  this.timeout(5000);
+
+  before(function(cb) {
+    var repo = npm.repo('micromatch');
+    repo.total(function(err, total) {
+      if (err) return cb(err);
+      expectedTotal = total;
+      repo.last(30, function(err, total) {
+        if (err) return cb(err);
+        expectedLast30 = total;
+        cb();
+      });
+    });
+  });
+
   it('should throw an error when nothing is specified', function(cb) {
     try {
       helper();
@@ -48,7 +64,7 @@ describe('helper-npm-downloads', function() {
   it('should get total downloads for micromatch', function(cb) {
     helper('micromatch', function(err, total) {
       if (err) return cb(err);
-      assert(total >= 17000000)
+      assert.equal(total, expectedTotal);
       cb();
     });
   });
@@ -56,7 +72,7 @@ describe('helper-npm-downloads', function() {
   it('should get last 30 days of downloads for micromatch when passed a number', function(cb) {
     helper('micromatch', 30, function(err, total) {
       if (err) return cb(err);
-      assert(total >= 1000000)
+      assert.equal(total, expectedLast30);
       cb();
     });
   });
@@ -64,7 +80,7 @@ describe('helper-npm-downloads', function() {
   it('should get last 30 days of downloads for micromatch when passed a string', function(cb) {
     helper('micromatch', "30", function(err, total) {
       if (err) return cb(err);
-      assert(total >= 1000000)
+      assert.equal(total, expectedLast30);
       cb();
     });
   });
@@ -72,7 +88,7 @@ describe('helper-npm-downloads', function() {
   it('should get last 30 days of downloads for micromatch when passed on options as a number', function(cb) {
     helper('micromatch', {last: 30}, function(err, total) {
       if (err) return cb(err);
-      assert(total >= 1000000)
+      assert.equal(total, expectedLast30);
       cb();
     });
   });
@@ -80,7 +96,7 @@ describe('helper-npm-downloads', function() {
   it('should get last 30 days of downloads for micromatch when passed on options as a string', function(cb) {
     helper('micromatch', {last: "30"}, function(err, total) {
       if (err) return cb(err);
-      assert(total >= 1000000)
+      assert.equal(total, expectedLast30);
       cb();
     });
   });
@@ -135,7 +151,7 @@ describe('helper-npm-downloads', function() {
       app.render(view, function(err, results) {
         if (err) return cb(err);
         try {
-          assert(results.content >= 17000000);
+          assert.equal(results.content, expectedTotal);
           cb();
         } catch(err) {
           cb(err);
@@ -149,7 +165,7 @@ describe('helper-npm-downloads', function() {
       app.render(view, function(err, results) {
         if (err) return cb(err);
         try {
-          assert(results.content >= 1000000);
+          assert.equal(results.content, expectedLast30);
           cb();
         } catch(err) {
           cb(err);
@@ -163,7 +179,7 @@ describe('helper-npm-downloads', function() {
       app.render(view, function(err, results) {
         if (err) return cb(err);
         try {
-          assert(results.content >= 1000000);
+          assert.equal(results.content, expectedLast30);
           cb();
         } catch(err) {
           cb(err);
@@ -177,7 +193,7 @@ describe('helper-npm-downloads', function() {
       app.render(view, function(err, results) {
         if (err) return cb(err);
         try {
-          assert(results.content >= 1000000);
+          assert.equal(results.content, expectedLast30);
           cb();
         } catch(err) {
           cb(err);
@@ -191,7 +207,7 @@ describe('helper-npm-downloads', function() {
       app.render(view, function(err, results) {
         if (err) return cb(err);
         try {
-          assert(results.content >= 1000000);
+          assert.equal(results.content, expectedLast30);
           cb();
         } catch(err) {
           cb(err);

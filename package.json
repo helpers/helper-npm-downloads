@@ -1,7 +1,7 @@
 {
   "name": "helper-npm-downloads",
   "description": "Get the npm download counts for the specified repository.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/helpers/helper-npm-downloads",
   "author": "Brian Woodward (https://github.com/doowb)",
   "repository": "helpers/helper-npm-downloads",
